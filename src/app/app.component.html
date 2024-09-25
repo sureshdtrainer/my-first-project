@@ -1,5 +1,76 @@
 <!--Text Interpolation-->
 <h1>Welcome to Angular Training - {{getName()}}</h1>
+<!--ngFor-->
+
+<ul>
+    <li *ngFor="let employee of employees; index as i; first as f; last as l; even as e; odd as o">
+        {{i}} {{employee}} {{f}} {{l}} {{e}} {{o}}
+    </li>
+</ul>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Sl.No</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Address</th>
+            <th>Is First</th>
+            <th>Is Last</th>
+            <th>Is Even</th>
+            <th>Is Odd</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employeesList; index as i; first as f; last as l; even as e; odd as o">
+            <td>{{i+1}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.salary}}</td>
+            <td>{{emp.address}}</td>
+            <td>{{f}}</td>
+            <td>{{l}}</td>
+            <td>{{e}}</td>
+            <td>{{o}}</td>
+        </tr>
+    </tbody>
+
+</table>
+
+
+<!--ng If-->
+<div *ngIf="!show && isDisable; then withRecords else noRecords">
+   
+</div>
+<ng-template #withRecords>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+</ng-template>
+
+<ng-template #noRecords>
+    <p>No records</p>
+</ng-template>
+
+
+<div [hidden]="!show">
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+</div>
+
+<!--Template Reference variable-->
+<input type="text" #mytext value="Suresh">
+
+<br>
+{{mytext.value}}
+<br>
+<button [disabled]="!mytext.value">Click</button>
+
+
+
 <br>
 <!--Event Binding-->
 <input type="text" (change)="txtChange()" />

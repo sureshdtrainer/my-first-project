@@ -9,6 +9,8 @@ export class AppComponent {
 
    private name: string = 'Suresh';
 
+   show=false;
+
    isDisable:boolean = true;
 
    myClasses =['success', 'height50'];
@@ -19,7 +21,16 @@ export class AppComponent {
     return this.name + ' is a Trainer';
   }
 
-  employees = ['Jack', 'Jill', 'Bob'];
+  employees = ['Jack', 'Jill', 'Bob', 'Mark'];
+
+  employeesList=[
+    {name:'Jack', salary:'1234', address:'USA'},
+    {name:'Bob', salary:'423423', address:'India'},
+    {name:'Mark', salary:'324234', address:'USA'},
+    {name:'Jim', salary:'6757', address:'Canada'},
+    {name:'Steve', salary:'657', address:'France'}
+
+  ]
 
   employee ={
     title: 'Software Engineer',
@@ -31,14 +42,14 @@ export class AppComponent {
 
   clickSave():void{
     //this.name ="Saved Successfully";
-    alert('Button Clicked');
+    //alert('Button Clicked');
   }
 
   mouseOverDone():void{
-    alert('Mouse Over');
+    //alert('Mouse Over');
   }
 
   txtChange() {
-    alert('text changed');
+    //alert('text changed');
     }
 }
