@@ -21,7 +21,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let emp of employeesList; index as i; first as f; last as l; even as e; odd as o">
+        <tr *ngFor="let emp of employeesList; index as i; first as f; last as l; even as e; odd as o; trackBy:refreshEmployees">
             <td>{{i+1}}</td>
             <td>{{emp.name}}</td>
             <td>{{emp.salary}}</td>
@@ -32,8 +32,26 @@
             <td>{{o}}</td>
         </tr>
     </tbody>
-
 </table>
+
+<button (click)="refresh()">Refresh</button>
+
+<!--ng Switch-->
+
+<div [ngSwitch]="myValue">
+    <div *ngSwitchCase="1">
+        <p>I am First</p>
+    </div>
+    <div *ngSwitchCase="2">
+        <p>I am Second</p>
+    </div>
+    <div *ngSwitchCase="3">
+        <p>I am Third</p>
+    </div>
+    <div *ngSwitchDefault>
+        <p>I am Default</p>
+    </div>
+</div>
 
 
 <!--ng If-->

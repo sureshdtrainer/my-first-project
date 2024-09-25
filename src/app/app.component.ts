@@ -7,6 +7,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+
+  refresh() {
+      this.employeesList=[
+        {name:'Jack', salary:'1234', address:'USA'},
+        {name:'Bob', salary:'423423', address:'India'},
+        {name:'Mark', salary:'324234', address:'USA'},
+        {name:'Jim', salary:'6757', address:'Canada'},
+        {name:'Steve', salary:'657', address:'France'},
+        {name:'Suresh', salary:'657', address:'France'},
+        {name:'Gaurav Singh', salary:'657', address:'France'}
+    
+      ]
+  }
+
+  refreshEmployees(index: number, employee: any):string{
+    return employee.name;
+  }
+
+    myValue=0;
    private name: string = 'Suresh';
 
    show=false;
@@ -30,7 +49,7 @@ export class AppComponent {
     {name:'Jim', salary:'6757', address:'Canada'},
     {name:'Steve', salary:'657', address:'France'}
 
-  ]
+  ];
 
   employee ={
     title: 'Software Engineer',
